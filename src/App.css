@@ -6,6 +6,36 @@
   height: 40vmin;
   pointer-events: none;
 }
+.frameimg :hover{
+
+  transform: rotateZ(-20deg);
+  transition: all .5s ease-in-out;
+
+}
+.cirle{
+  outline-offset: -1px;
+
+  transition: outline-offset .5s ease;
+}
+.cirle:hover,
+.cirle:focus {
+  outline: .5px solid #6FD3CC;
+  border: .5px solid #6FD3CC;
+  outline-offset: 10px;
+}
+
+.circle1{
+  outline-offset: -2px;
+  transition: outline-offset .5s ease;
+}
+.circle1:hover,
+.circle1:focus {
+  outline: .5px solid #6FD3CC;
+
+  outline-offset: 20px;
+  border-radius: 50%;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -27,12 +57,49 @@
 .App-link {
   color: #61dafb;
 }
-
+.mainimg{
+  background-image: url("./Imgaes/roadmap.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100%;
+  padding-top: 4.5rem;
+  padding-left: 1rem;
+  padding-bottom: 8rem;
+  border-top-left-radius: 1rem;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.imgwidth{
+  width: 100%;
+}
+@media only screen and (max-width: 786px){
+  .imgwidth{
+    width: 160px;
+  }
+  .frameimg {
+   
+      animation: rotation 2s infinite ease-in-out;
+  
+  }
+  .frameimg:hover {
+   
+    animation: rotation 2s infinite linear !important; 
+    animation-direction: alternate-reverse;
+}
+  @keyframes rotation {
+    from {
+      transform: rotateZ(0deg);
+      
+    }
+    to {
+      transform: rotateZ(-20deg);
+    }
   }
 }
